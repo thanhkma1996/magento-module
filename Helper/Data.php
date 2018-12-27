@@ -1,0 +1,22 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: soldi
+ * Date: 12/27/2018
+ * Time: 9:09 AM
+ */
+
+namespace AHT\Blog\Helper;
+
+use Magento\Framework\App\Helper\AbstractHelper;
+use Magento\Store\Model\ScopeInterface;
+
+class Data extends AbstractHelper
+{
+    public function getConfig($configPath, $storeId = null)
+    {
+        return $this->scopeConfig->getValue(
+            $configPath, ScopeInterface::SCOPE_STORE, $storeId
+        );
+    }
+}
